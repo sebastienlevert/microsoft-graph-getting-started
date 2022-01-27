@@ -1,0 +1,14 @@
+{
+  "name": ".NET 6 devcontainer",
+  "image": "nikiforovall/devcontainers-dotnet:latest",
+  "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash",
+      "dotfiles.installCommand": "",
+      "remote.containers.dotfiles.repository": "https://github.com/NikiforovAll/dotfiles.git",
+      "remote.containers.dotfiles.installCommand": "~/dotfiles/src/dev-container/boot/install.sh",
+      "remote.containers.dotfiles.targetPath": "~/dotfiles",
+  },
+  "extensions": [
+      "ms-dotnettools.csharp"
+  ]
+}
