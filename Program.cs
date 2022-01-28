@@ -39,7 +39,7 @@ while (choice != 0) {
             Console.WriteLine("Goodbye...");
             break;
         case 1:
-            // Display access 
+            // Display access token
             var accessToken = await GraphHelper.GetAccessTokenAsync(scopes);
             Console.WriteLine($"Access token: {accessToken}\n");
             break;

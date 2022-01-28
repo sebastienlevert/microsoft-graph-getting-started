@@ -45,23 +45,24 @@ namespace GraphGettingStarted
             }
         }
 
-        public static async Task<IUserMessagesCollectionPage?> GetMessagesAsync(int numberOfMessages = 5)
+        public static async Task<IMailFolderMessagesCollectionPage?> GetMessagesAsync(int numberOfMessages = 5)
         {
             try
             {
                 // GET /me
-                return await graphClient!.Me.Messages
+                return await graphClient!.Me.MailFolders.Inbox.Messages
                     .Request()
                     .Select(u => new{
                         u.Subject,
                         u.From
                     })
                     .Top(numberOfMessages)
+                    .OrderBy("receivedDateTime desc")
                     .GetAsync();
             }
             catch (ServiceException ex)
             {
-                Console.WriteLine($"Error getting signed-in user: {ex.Message}");
+                Console.WriteLine($"Error getting signed-in user messages: {ex.Message}");
                 return null;
             }
         }
