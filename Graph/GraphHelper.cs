@@ -33,8 +33,7 @@ namespace GraphGettingStarted
                     .Request()
                     .Select(u => new{
                         u.DisplayName,
-                        u.Mail,
-                        u.MailboxSettings
+                        u.Mail
                     })
                     .GetAsync();
             }

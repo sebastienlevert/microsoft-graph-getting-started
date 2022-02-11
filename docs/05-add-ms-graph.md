@@ -16,8 +16,7 @@ In this exercise you will incorporate the Microsoft Graph into the application. 
                 .Request()
                 .Select(u => new{
                     u.DisplayName,
-                    u.Mail,
-                    u.MailboxSettings
+                    u.Mail
                 })
                 .GetAsync();
         }
@@ -29,7 +28,7 @@ In this exercise you will incorporate the Microsoft Graph into the application. 
     }
     ```
 
-1. Add the following code in `Program.cs` just after the `// Get signed in user` call to get the user and output the user's display name.
+2. Add the following code in `Program.cs` just after the `// Get signed in user` call to get the user and output the user's display name.
 
     ```csharp    
     var user = await GraphHelper.GetMeAsync();
